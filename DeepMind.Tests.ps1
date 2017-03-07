@@ -18,17 +18,4 @@ Describe "Add-DeepMind" {
         # -- Assert
         $actual | Should Be $Expected
     }
-
-    It "Calls Invoke-WebRequest with the correct parameters" {
-        # -- Arrange
-        $expectedUri = "http://dupsug10.0115633a.svc.dockerapp.io/deepmind/add" 
-        Mock Invoke-WebRequest 
-        Mock Invoke-WebRequest -ParameterFilter { $Uri -eq $expectedUri }
-
-        # -- Act
-        Add-DeepMind -A 10 -B 11
-
-        # -- Assert
-        Assert-MockCalled -CommandName Invoke-WebRequest -ParameterFilter { $Uri -eq $expectedUri } 
-    } 
 }
