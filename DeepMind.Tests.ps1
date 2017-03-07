@@ -18,8 +18,4 @@ Describe "Add-DeepMind" {
         # -- Assert
         $actual | Should Be $Expected
     }
-    
-    It "Fails miserably" {
-        throw "Please fail our tests on appveyor."
-    }
 }
